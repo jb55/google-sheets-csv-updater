@@ -67,7 +67,7 @@ async function make_request(spreadsheetId, reqs)
 function usage()
 {
 	const name = path.basename(process.argv[1])
-	console.log("usage: %s [spreadsheet_id] [<sheetid>_file.tsv]...", name)
+	console.log("usage: %s [spreadsheet_id] [<sheetid>_file.csv]...", name)
 	process.exit(0)
 }
 
