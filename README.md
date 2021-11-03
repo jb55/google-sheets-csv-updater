@@ -25,3 +25,21 @@ Make sure to add the Sheets API to the project, the only scope used by this scri
 `https://www.googleapis.com/auth/spreadsheets`
 
 You also need to add the service credential's email as an editor to the spreadsheet.
+
+## Why
+
+I wanted to upload database reports periodically without having to do too much work:
+
+```
+#!/usr/bin/env bash
+
+set -eou pipefail
+
+# with an ssh tunnel to prod :)
+export PGHOST=127.0.0.1 PGPORT=5445 PGUSER=pguser PGPASSWORD=???? PGDATABASE=steamoji
+
+psql --csv < session_counts.sql > 1601500676_sessions.csv
+psql --csv < apprentice_report.sql > 1222747557_apprentices.csv
+
+node index.js 18IjxDVl-IZg5CL... *.csv
+```
