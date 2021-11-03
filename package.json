@@ -1,0 +1,12 @@
+{
+  "name": "google-sheets-csv-updater",
+  "description": "sync csvs to google sheets",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/jb55/google-sheets-csv-updater"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "googleapis": "^89.0.0"
+  }
+}
