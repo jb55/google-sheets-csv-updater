@@ -79,7 +79,7 @@ async function main () {
 	const spreadsheetId = args[0]
 
 	const reqs = args.slice(1).map(file => { 
-		let [sheetId] = file.split("_")
+		let [sheetId] = path.basename(file).split("_")
 		return {sheetId, file}
 	})
 
