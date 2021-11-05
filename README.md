@@ -6,6 +6,7 @@ Simple script that syncs csvs to google sheets
 ## Usage
 
 ```
+$ npm install
 $ export SPREADSHEET_ID="18IjwDVl-IGg5CLV7k-LdcwC..."
 $ node index.js $SPREADSHEET_ID 1005113952_some_report.csv 1625113952_some_report2.csv 
 $ node index.js $SPREADSHEET_ID *.csv
@@ -37,6 +38,8 @@ set -eou pipefail
 
 # with an ssh tunnel to prod :)
 export PGHOST=127.0.0.1 PGPORT=5445 PGUSER=pguser PGPASSWORD=???? PGDATABASE=steamoji
+
+pg_isready
 
 psql --csv < session_counts.sql > 1601500676_sessions.csv
 psql --csv < apprentice_report.sql > 1222747557_apprentices.csv
